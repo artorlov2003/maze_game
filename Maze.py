@@ -52,7 +52,7 @@ class TNT(pg.sprite.Sprite):
     def __init__(self, x, y, block_size):
         super().__init__()
         self.block_size = block_size
-        self.image = pg.transform.scale(pg.image.load(path.join(path.dirname(__file__), 'tnt.png')), (self.block_size, self.block_size))
+        self.image = pg.transform.scale(pg.image.load(path.join(path.dirname(__file__), 'assets/tnt.png')), (self.block_size, self.block_size))
         self.rect = self.image.get_rect()
         self.rect.x = x * self.block_size
         self.rect.y = y * self.block_size
@@ -76,7 +76,7 @@ class Maze:
         self.floor = None
         self.started_time = 0
         self.player_set_image_method = None
-        self.explode_sound = pg.mixer.Sound(path.join(path.dirname(__file__), "sounds/explode.ogg"))
+        self.explode_sound = pg.mixer.Sound(path.join(path.dirname(__file__), "assets/sounds/explode.ogg"))
 
     def regenerate(self, seed=None):
         if self.exit is not None:

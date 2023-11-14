@@ -37,7 +37,7 @@ def main(num_of_tnts, maze_size, level):
     global cheat, cheat_index, epilepsy
     block_size = 400 // maze_size
     pg.init()
-    pg.mixer.music.load(path.join(path.dirname(__file__), 'sounds/music.ogg'))
+    pg.mixer.music.load(path.join(path.dirname(__file__), 'assets/sounds/music.ogg'))
     pg.mixer.music.play(-1)
     pg.init()
     clock = pg.time.Clock()
@@ -57,7 +57,7 @@ def main(num_of_tnts, maze_size, level):
     # noinspection PyTypeChecker
     sprites.add(player)
     seed = str(maze.current_seed)
-    font = pg.font.Font(path.join(path.dirname(__file__), 'MinecraftRegular-Bmg3.otf'), 32)
+    font = pg.font.Font(path.join(path.dirname(__file__), 'assets/MinecraftRegular-Bmg3.otf'), 32)
     win_pause = False
     lvl_time = 0
 
@@ -127,7 +127,7 @@ def main(num_of_tnts, maze_size, level):
                 lvl_time = pg.time.get_ticks() - maze.started_time
                 hit.kill()
                 level += 1
-                pg.mixer.Sound.play(pg.mixer.Sound(path.join(path.dirname(__file__), "sounds/win.ogg")))
+                pg.mixer.Sound.play(pg.mixer.Sound(path.join(path.dirname(__file__), "assets/sounds/win.ogg")))
                 explosions.add(Firework(player.rect.center))
                 win_pause = True
         screen.fill(background_color)
@@ -143,7 +143,7 @@ def main(num_of_tnts, maze_size, level):
         screen.blit(help1_text, (5, (maze_size * 2 - 1) * block_size + 40))
         screen.blit(level_text, (550, (maze_size * 2 - 1) * block_size + 40))
         screen.blit(help2_text, (5, (maze_size * 2 - 1) * block_size + 75))
-        screen.blit(pg.transform.scale(pg.image.load(path.join(path.dirname(__file__), 'tnt.png')), (40, 40)),
+        screen.blit(pg.transform.scale(pg.image.load(path.join(path.dirname(__file__), 'assets/tnt.png')), (40, 40)),
                     (300, (maze_size * 2 - 1) * block_size + 1))
         sprites.update()
         explosions.update()

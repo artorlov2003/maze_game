@@ -8,7 +8,7 @@ class Player(pg.sprite.Sprite):
         pg.sprite.Sprite.__init__(self)
         self.block_size = block_size
         self.Maze_size = maze_size
-        self.image = pg.image.load(path.join(path.dirname(__file__), "Players/steve.png")).convert()
+        self.image = pg.image.load(path.join(path.dirname(__file__), "assets/Players/steve.png")).convert()
         self.image.set_colorkey((0, 0, 0))
         self.image = pg.transform.scale(self.image, (block_size, block_size))
         self.rect = self.image.get_rect()
@@ -23,8 +23,8 @@ class Player(pg.sprite.Sprite):
         self.y = 0
         self.target_x = 0
         self.target_y = 0
-        self.move_sound = pg.mixer.Sound(path.join(path.dirname(__file__), "sounds/walk.ogg"))
-        self.hit_sound = pg.mixer.Sound(path.join(path.dirname(__file__), "sounds/hit.ogg"))
+        self.move_sound = pg.mixer.Sound(path.join(path.dirname(__file__), "assets/sounds/walk.ogg"))
+        self.hit_sound = pg.mixer.Sound(path.join(path.dirname(__file__), "assets/sounds/hit.ogg"))
 
     def short_move(self, direction):
         if direction is None:
